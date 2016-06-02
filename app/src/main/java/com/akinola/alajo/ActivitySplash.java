@@ -61,8 +61,6 @@ public class ActivitySplash extends AppCompatActivity {
                 if (true) { //override
 
                     Alajo alajo = new Alajo();
-
-
                     String auth = prefs.getString("AUTHORIZATION","");
                     String email = prefs.getString("EMAIL","");
 
@@ -165,14 +163,14 @@ public class ActivitySplash extends AppCompatActivity {
         });
     }
 
-    public boolean isOnline() {
+    private boolean isOnline() {
         ConnectivityManager cm =
                 (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
         NetworkInfo netInfo = cm.getActiveNetworkInfo();
         return netInfo != null && netInfo.isConnectedOrConnecting();
     }
 
-    public void ShowAlert(String message,String title){
+    private void ShowAlert(String message,String title){
         AlertDialog.Builder alert = new AlertDialog.Builder(context);
         alert.setTitle(title);
         alert.setMessage(message);
